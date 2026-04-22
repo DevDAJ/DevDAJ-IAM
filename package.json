@@ -1,0 +1,23 @@
+{
+  "name": "devdaj-iam",
+  "private": true,
+  "workspaces": ["server", "web"],
+  "scripts": {
+    "dev": "concurrently -n server,web -c blue,magenta \"bun run --cwd server dev\" \"bun run --cwd web dev\"",
+    "dev:server": "bun run --cwd server dev",
+    "dev:web": "bun run --cwd web dev",
+    "build": "bun run --cwd server build && bun run --cwd web build",
+    "auth:migrate": "bun run --cwd server auth:migrate",
+    "lint": "oxlint .",
+    "lint:fix": "oxlint --fix .",
+    "format": "oxfmt --write server web",
+    "format:check": "oxfmt --check server web",
+    "test": "bun run --cwd server test",
+    "test:coverage": "bun run --cwd server test:coverage"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "oxfmt": "^0.46.0",
+    "oxlint": "^1.61.0"
+  }
+}

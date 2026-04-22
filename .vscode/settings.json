@@ -1,0 +1,4 @@
+{
+  "oxc.path.oxlint": "${workspaceFolder}/node_modules/.bin/oxlint",
+  "oxc.path.oxfmt": "${workspaceFolder}/node_modules/.bin/oxfmt"
+}

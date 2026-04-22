@@ -1,0 +1,9 @@
+[test]
+coverageSkipTestFiles = true
+coveragePathIgnorePatterns = [
+  "src/auth.ts",
+  "src/index.ts",
+  "src/seed.ts",
+  "src/db/types.ts",
+  "test/preload.ts",
+]
