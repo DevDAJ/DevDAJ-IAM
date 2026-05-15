@@ -1,4 +1,8 @@
 {
   "oxc.path.oxlint": "${workspaceFolder}/node_modules/.bin/oxlint",
-  "oxc.path.oxfmt": "${workspaceFolder}/node_modules/.bin/oxfmt"
+  "oxc.path.oxfmt": "${workspaceFolder}/node_modules/.bin/oxfmt",
+  "editor.defaultFormatter": "oxc.oxc-vscode",
+  "[typescript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  }
 }
