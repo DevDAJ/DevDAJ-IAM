@@ -1,6 +1,6 @@
 import Elysia from "elysia"
 
-export default new Elysia({ prefix: '/apps' })
+export default new Elysia({ prefix: '/apps', tags: ['app'] })
     .get('/', async () => { })
     .post('/', async () => { })
     .get('/:id', async () => { })

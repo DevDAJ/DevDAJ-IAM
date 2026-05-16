@@ -1,6 +1,6 @@
 import Elysia from "elysia"
 
-const roles = new Elysia({ prefix: '/roles' })
+const roles = new Elysia({ prefix: '/roles', tags: ['role'] })
     .post('/', async () => { })
     .get('/', async () => { })
     .get('/:id', async () => { })
@@ -10,7 +10,7 @@ const roles = new Elysia({ prefix: '/roles' })
     .post('/:id/permissions', async () => { })
     .delete('/:id/permissions', async () => { })
 
-const permissions = new Elysia({ prefix: '/permissions' })
+const permissions = new Elysia({ prefix: '/permissions', tags: ['permission'] })
     .post('/', async () => { })
     .get('/', async () => { })
     .get('/:id', async () => { })

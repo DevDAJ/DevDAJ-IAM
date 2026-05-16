@@ -1,6 +1,6 @@
 import Elysia from "elysia";
 
-export default new Elysia({ prefix: '/users' })
+export default new Elysia({ prefix: '/users', tags: ['user'] })
     .get('/', async () => { })
     .get('/me', async () => { })
     .patch('/me', async () => { })

@@ -1,12 +1,16 @@
-import Elysia from "elysia"
+import Elysia from "elysia";
 
-export default new Elysia({ prefix: '/auth' })
-    .post('/login', async () => { })
-    .post('/register', async () => { })
-    .post('/refresh', async () => { })
-    .post('/logout', async () => { })
-    .get('/oauth/:provider', async () => { })
-    .get('/oauth/:provider/callback', async () => { })
-    .post('/verify-email', async () => { })
-    .post('/forgot-password', async () => { })
-    .post('/reset-password', async () => { })
+const oauthService = new Elysia({ prefix: '/oauth', detail: { hide: true } })
+    .get('/oauth/authorize', async () => { })
+    .post('/oauth/token', async () => { })
+    .post('/oauth/revoke', async () => { })
+    .get('/oauth/introspect', async () => { })
+    .get('/oauth/userinfo', async () => { })
+
+const wellKnownService = new Elysia({ prefix: '/.well-known' })
+    .get('/openid-configuration', async () => { })
+    .get('/jwks.json', async () => { })
+
+export default new Elysia()
+    .use(oauthService)
+    .use(wellKnownService)
